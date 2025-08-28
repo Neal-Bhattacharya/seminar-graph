@@ -23,6 +23,6 @@ Instead, it's a bird's eye view of how thinkers (in one tradition of thought) bu
 ---
 
 The reading list is based off of Annapolis 24-25. I used the entire texts except where the selections were explicitly stated (for Plutarch's Lives, for example).
-I did not include The Bible, since it hard to ascribe an "author" to the books in it.
+I did not include The Bible, since it's hard to ascribe an "author" to the books in it.
 
 Not all the books I used are in this repo since many are copyrighted, or their translations are.
