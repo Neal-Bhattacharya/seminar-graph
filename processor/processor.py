@@ -1,7 +1,8 @@
 import re
-
+import time
 from book_reader.reader import BookReader
 from utils.author import Author
+
 
 
 class Processor:
@@ -14,6 +15,11 @@ class Processor:
         self.books = r.getBooks()
         return self.books
 
+    def print_done(self):
+        print("\033[1;32m" + "Done!" + "\033[0m")
+        print("------------------------------------------------")
+
+
     def set_word_frequencies(self, book):
         word_frequencies = {}
         lines = book.get_lines()
@@ -22,7 +28,6 @@ class Processor:
             line = re.sub(r'[^\w\s]','',line)
             words = re.split("\\s+", line)
             for word in words:
-
                 if word not in word_frequencies:
                     word_frequencies[word] = {
                         'count' : 1,
@@ -34,8 +39,10 @@ class Processor:
         book.set_word_freqs(word_frequencies)
 
     def set_all_word_freqs(self):
+        print("Reading books:")
         for book in self.books:
             self.set_word_frequencies(book)
+        self.print_done()
 
     def predicate(self, word, author_name, book):
         author_name = author_name.replace(' ', '')
@@ -45,7 +52,8 @@ class Processor:
                 and not word.startswith("IGNORE"))
 
     def populate_mentions(self):
-        self.set_all_word_freqs()
+        print("Finding mentions:")
+
         author_names = set([book.author for book in self.books])
 
         for author_name in author_names:
@@ -63,9 +71,9 @@ class Processor:
                         )
                         continue
 
+        self.print_done()
+
     def get_edges(self):
-        if len(self.edges) > 0:
-            return self.edges
         for author in self.authors:
             for a in self.authors[author].mentioned_by:
                 count = self.authors[author].mentioned_by[a]['count']
