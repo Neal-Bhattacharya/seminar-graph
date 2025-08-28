@@ -1,4 +1,4 @@
-St. John's College, a small liberal arts college, has a class that spans four years called Seminar.
+St. John's College, [a Great Books school](https://www.nytimes.com/2018/09/11/opinion/contrarian-college-stjohns.html), has a class that spans four years called Seminar.
 
 It consists entirely of reading and talking about books in the Western "canon" — at least, one conception of that canon.
 
