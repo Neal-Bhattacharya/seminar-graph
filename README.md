@@ -15,7 +15,7 @@ Hovering over an edge in .svg should show you more information about that edge.
 I wrote a Python program to read the texts, count the word frequencies for each text, find author matches and finally generate the graph with pygraphviz. I am more familiar with C-family languages than Python, so apologies for any non-pythonic idioms.
   
 ---
-There were many false positives. For example, Chaucer mentions "Bacon", but he means the food, not the seminar author Roger Bacon. Swift is such a common word that I didn't even try with him. Adam Smith I had to do manually.
+There were many false positives. For example, Chaucer mentions "Bacon", but he means the food, not the seminar author Francis Bacon. Swift is such a common word that I didn't even try with him. Adam Smith I had to do manually.
 I relied largely on my memory of these texts to find and resolve these, so it's likely that I missed some. Hence, this graph IS NOT INTENDED TO SERVE AS A REFERENCE
 
 Instead, it's a bird's eye view of how thinkers (in one tradition of thought) built on each other over time, creating one interconnected edifice of the mind.
