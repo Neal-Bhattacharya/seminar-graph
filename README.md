@@ -4,7 +4,7 @@ This graph shows all the times each author mentions another in the texts we read
 The reading list is based off Annapolis 24-25. I used the entire texts except where the selections were explicitly stated (in Plutarch, for example).
 I did not include The Bible, since it hard to ascribe one "author" (God?) to the books in it.
 
-Homer——85——>Plato should be read as "Homer is mentioned by Plato 85 times."
+Homer——85——>Plato should be read as "Homer is mentioned by Plato 85 times in the seminar books."
 Hovering over an edge in .svg should show you more information about that edge.
 
 I made a python program to read the texts, count the word frequencies for each text, and find author matches. See Processor.predicate()
