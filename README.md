@@ -14,4 +14,4 @@ I relied largely on my memory of these texts to find and resolve these, so it's 
 
 Instead, it's a bird's eye view of how thinkers (in one tradition of thought) built on each other over time, creating one interconnected edifice of the mind.
 
-Note: Not all the books are in this repo since many are copywrited.
+Note: Not all the books are in this repo since many are copyrighted.
