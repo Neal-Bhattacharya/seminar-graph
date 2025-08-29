@@ -14,7 +14,7 @@ for e in p.get_edges():
     edge = G.get_edge(e[0], e[1])
     edge.attr['label'] = e[2]
     edge.attr['fontname'] = 'Didot'
-    edge.attr['tooltip'] = "{} mentioned by {} {} time{}".format(e[0], e[1], e[2], "s" if not e[2] > 0 else "")
+    edge.attr['tooltip'] = "{} mentioned by {} {} time{}".format(e[0], e[1], e[2], "s" if e[2] > 1 else "")
 for node in G.nodes(): node.attr['fontname'] = 'Didot'
 
 G.layout(prog='dot')
