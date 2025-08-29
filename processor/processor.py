@@ -70,8 +70,6 @@ class Processor:
                             freqs[word]['count'],
                             freqs[word]['lines']
                         )
-                        continue
-
         self.print_done()
 
     def get_edges(self):
