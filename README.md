@@ -16,7 +16,7 @@ I wrote a Python program to read the texts, count the word frequencies for each 
   
 ---
 There were many false positives. For example, Chaucer mentions "Bacon", but he means the food, not the seminar author Francis Bacon. But Marx refers to both the food and the philosopher. Swift is such a common word that I didn't even try with him. Adam Smith I had to do manually.
-I relied largely on my memory of these texts to find and resolve the false positives, so it's likely that I missed some. Hence, this graph is **not intended to serve as a reference.**
+I largely relied on my memory of these texts to find and resolve the false positives, so it's likely that I missed some. Hence, this graph is **not intended to serve as a reference.**
 
 Instead, it's a bird's eye view of how thinkers (in one tradition of thought) built on each other over time, creating one interconnected edifice of the mind.
 
