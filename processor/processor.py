@@ -4,52 +4,53 @@ from book_reader.reader import BookReader
 from utils.author import Author
 
 
+def populate_word_frequencies(book):
+    word_frequencies = {}
+    lines = book.get_lines()
+    print("Reading {} by {}...".format(book.title, book.author))
+    for line in lines:
+        line = re.sub(r'[^\w\s]','',line)
+        words = re.split("\\s+", line)
+        for word in words:
+            if word not in word_frequencies:
+                word_frequencies[word] = {
+                    'count' : 1,
+                    'lines': [line]
+                }
+            else:
+                word_frequencies[word]['count'] += 1
+                word_frequencies[word]['lines'].append(line)
+    book.set_word_freqs(word_frequencies)
+
+
+def predicate(word, author_name, book):
+    author_name = author_name.replace(' ', '')
+    author_name = author_name.replace(',', '')
+    return ((author_name == word or author_name in word + "s")
+            and author_name != book.author
+            and not word.startswith("IGNORE"))
+
 
 class Processor:
     def __init__(self):
         self.authors = {}
         self.books = []
         self.edges = []
-    def get_books_from_reader(self):
-        r = BookReader()
-        self.books = r.getBooks()
-        return self.books
 
     def print_done(self):
         print("\033[1;32m" + "Done!" + "\033[0m")
         print("------------------------------------------------")
 
+    def get_books_from_reader(self):
+        r = BookReader()
+        self.books = r.getBooks()
+        return self.books
 
-    def set_word_frequencies(self, book):
-        word_frequencies = {}
-        lines = book.get_lines()
-        print("Reading {} by {}...".format(book.title, book.author))
-        for line in lines:
-            line = re.sub(r'[^\w\s]','',line)
-            words = re.split("\\s+", line)
-            for word in words:
-                if word not in word_frequencies:
-                    word_frequencies[word] = {
-                        'count' : 1,
-                        'lines': [line]
-                    }
-                else:
-                    word_frequencies[word]['count'] += 1
-                    word_frequencies[word]['lines'].append(line)
-        book.set_word_freqs(word_frequencies)
-
-    def set_all_word_freqs(self):
+    def populate_all_word_freqs(self):
         print("Reading books:")
         for book in self.books:
-            self.set_word_frequencies(book)
+            populate_word_frequencies(book)
         self.print_done()
-
-    def predicate(self, word, author_name, book):
-        author_name = author_name.replace(' ', '')
-        author_name = author_name.replace(',', '')
-        return ((author_name == word or author_name in word + "s")
-                and author_name != book.author
-                and not word.startswith("IGNORE"))
 
     def populate_mentions(self):
         print("Finding mentions:")
@@ -62,7 +63,7 @@ class Processor:
             freqs = book.get_word_freqs()
             for word in freqs.keys():
                 for author_name in self.authors:
-                    if self.predicate(word, author_name, book):
+                    if predicate(word, author_name, book):
                         print("Found {} in {} by {} {} times".format(word, book.title, book.author, freqs[word]['count']))
                         self.authors[author_name].add_mention_by(
                             book.author,
@@ -83,8 +84,10 @@ class Processor:
 
     def run(self):
         self.get_books_from_reader()
-        self.set_all_word_freqs()
+        self.populate_all_word_freqs()
         self.populate_mentions()
+
+
 
 '''
 for k in authors:
