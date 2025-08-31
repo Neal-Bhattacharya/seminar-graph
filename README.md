@@ -14,10 +14,6 @@ Homer——85——>Plato should be read as "Homer is mentioned by Plato 85 time
 Hovering over an edge in .svg should show you more information about that edge.
 
 
-  ---
-
-The Processor class parses the lines in the texts, counts the word frequencies for each, and  organizes author matches. Run grapher.py generate the graph. 
-  
 ---
 There were many false positives. For example, Chaucer mentions "Bacon", but he means the food, not the seminar author Francis Bacon. But Marx refers to both the food and the philosopher. Swift is such a common word that I didn't even try with him. Adam Smith I had to do manually.
 I largely relied on my memory of these texts to find and resolve the false positives, so it's likely that I missed some. Hence, this graph is **not intended to serve as a reference.**
