@@ -27,3 +27,7 @@ The reading list is based off of Annapolis 24-25. I used the entire texts except
 I did not include The Bible, since it's hard to ascribe an "author" to the books in it.
 
 Not all the books I used are in this repo since many are copyrighted, or their translations are.
+
+---
+
+AI Use Disclaimer: Not knowingly used
