@@ -1,3 +1,7 @@
+
+<img width="1108" height="638" alt="Screenshot 2025-08-31 at 3 28 04 AM" src="https://github.com/user-attachments/assets/42956c93-0b19-4adc-9f18-0bd8463ab142" />
+
+
 St. John's College, a [Great Books school](https://www.nytimes.com/2018/09/11/opinion/contrarian-college-stjohns.html), has a class that spans four years called Seminar.
 
 It consists entirely of reading and talking about books in the Western "canon" — or, at least, one conception of that canon.
