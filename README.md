@@ -13,7 +13,7 @@ It consists entirely of reading and talking about books in the Western "canon" �
 Homer——85——>Plato should be read as "Homer is mentioned by Plato 85 times in the seminar books."
 Hovering over an edge in .svg should show you more information about that edge.
 
-If you prefer, there is a version with the arrows going the opposite direction, in `graph-reversed-edges.svg`
+If you prefer, there is a version with the arrows going the opposite direction, in [`graph-reverse-edges.svg`](https://raw.githubusercontent.com/Neal-Bhattacharya/seminar-graph/refs/heads/main/graph-reverse-arrows.svg)
 
 ---
 There were many false positives. For example, Chaucer mentions "Bacon", but he means the food, not the seminar author Francis Bacon. But Marx refers to both the food and the philosopher. Swift is such a common word that I didn't even try with him. Adam Smith I had to do manually.
