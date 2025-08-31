@@ -16,7 +16,7 @@ Hovering over an edge in .svg should show you more information about that edge.
 
   ---
 
-I wrote a Python program to read the texts, count the word frequencies for each text, find author matches and finally generate the graph with pygraphviz. I am more familiar with C-family languages than Python, so apologies for any non-pythonic idioms.
+The Processor class parses the lines in the texts, counts the word frequencies for each, and  organizes author matches. Run grapher.py generate the graph. 
   
 ---
 There were many false positives. For example, Chaucer mentions "Bacon", but he means the food, not the seminar author Francis Bacon. But Marx refers to both the food and the philosopher. Swift is such a common word that I didn't even try with him. Adam Smith I had to do manually.
