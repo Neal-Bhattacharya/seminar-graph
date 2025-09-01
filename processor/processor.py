@@ -6,12 +6,14 @@ from utils.author import Author
 
 def populate_word_frequencies(book):
     word_frequencies = {}
+    word_count = 0
     lines = book.get_lines()
     print("Reading {} by {}...".format(book.title, book.author))
     for line in lines:
         line = re.sub(r'[^\w\s]','',line)
         words = re.split("\\s+", line)
         for word in words:
+            word_count += 1
             if word not in word_frequencies:
                 word_frequencies[word] = {
                     'count' : 1,
@@ -21,12 +23,13 @@ def populate_word_frequencies(book):
                 word_frequencies[word]['count'] += 1
                 word_frequencies[word]['lines'].append(line)
     book.set_word_freqs(word_frequencies)
+    return word_count
 
 
 def predicate(word, author_name, book):
     author_name = author_name.replace(' ', '')
     author_name = author_name.replace(',', '')
-    return ((author_name == word or author_name in word + "s")
+    return ((author_name in word)
             and author_name != book.author
             and not word.startswith("IGNORE"))
 
@@ -48,9 +51,11 @@ class Processor:
 
     def populate_all_word_freqs(self):
         print("Reading books:")
+        count = 0
         for book in self.books:
-            populate_word_frequencies(book)
+            count += populate_word_frequencies(book)
         self.print_done()
+        print("Total words:", count)
 
     def populate_mentions(self):
         print("Finding mentions:")
@@ -79,6 +84,9 @@ class Processor:
                 self.edges.append((author, a, count))
 
         return self.edges
+
+    def get_lines(self, mentionee, mentioner):
+        return self.authors[mentionee].mentioned_by[mentioner]['lines']
 
     def run(self):
         self.get_books_from_reader()
