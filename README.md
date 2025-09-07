@@ -6,7 +6,7 @@ St. John's College, a [Great Books school](https://www.nytimes.com/2018/09/11/op
 
 It consists entirely of reading and talking about books in the Western "canon" — or, at least, one conception of that canon.
 
-[This graph ](https://raw.githubusercontent.com/Neal-Bhattacharya/seminar-graph/refs/heads/main/graph-reverse-arrows.svg) shows all the times each author is mentioned by another in the texts we read.
+[This graph](https://raw.githubusercontent.com/Neal-Bhattacharya/seminar-graph/refs/heads/main/graph.svg) shows all the times each author is mentioned by another in the texts we read.
   
 ---
 
